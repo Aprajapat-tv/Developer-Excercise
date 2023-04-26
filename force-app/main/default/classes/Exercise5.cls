@@ -1,6 +1,6 @@
 public class Exercise5 {
     public static void OneContactMarkedAsPrimary(List<Contact> clist){
-          Set<Id> accountIds = new Set<Id>();
+        Set<Id> accountIds = new Set<Id>();
         Map<Id, Contact> primaryContactsMap = new Map<Id, Contact>();
         for (Contact contact : clist) {
             if (contact.Is_Primary__c && contact.AccountId != null) {
@@ -74,7 +74,7 @@ public class Exercise5 {
     }
     
     public static void CountContact(List<Contact> coldlist,List<Contact> cnewlist){
-          if(trigger.isafter){
+        
         Set<id> accId = new Set<id>();
         if(cnewlist != NUll){
             for(Contact c: cnewlist){
@@ -99,7 +99,7 @@ public class Exercise5 {
         }
         update acc;
     
-    }
+ 
  
     }
 }
