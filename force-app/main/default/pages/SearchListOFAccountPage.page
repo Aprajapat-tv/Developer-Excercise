@@ -1,0 +1,26 @@
+<apex:page Controller="SearchAccountClass">
+<apex:form >
+    <apex:pageBlock title="Accounts">
+		<apex:inputText value="{!findValue}"/>
+        <apex:commandButton value="Search" action="{!getAccounts}"/>
+            
+        <apex:pageBlockTable value="{!lstAccount}" var="item">
+
+            <apex:column value="{!item.name}"/>
+            <apex:column value="{!item.AccountNumber}"/>
+            <apex:column value="{!item.AnnualRevenue}"/>
+            <apex:column value="{!item.Phone}"/>
+
+        </apex:pageBlockTable>
+		<apex:pageBlockButtons >
+            <apex:commandLink action="{!First}" title="First Page" value="First Page"/>&nbsp;
+      <apex:commandLink action="{!Previous}" title="Previous Page" value="<<" rendered="{!Con.HasPrevious}"/> &nbsp;
+         
+          
+      <apex:commandLink title="Next Page" value=">>" rendered="{!Con.HasNext}" action="{!Next}"/>&nbsp;  
+            <apex:commandLink action="{!Last}" title="Last Page" value="Last Page"/>&nbsp;
+            </apex:pageBlockButtons>  
+    </apex:pageBlock>
+ 
+</apex:form>
+</apex:page>
